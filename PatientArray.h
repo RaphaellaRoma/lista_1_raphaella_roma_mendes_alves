@@ -1,7 +1,11 @@
 #ifndef PATIENT_ARRAY_H
 #define PATIENT_ARRAY_H
 
-namespace PatientArray{
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+namespace PatientArrayTAD{
 
 struct Patient {
 char name[50];
@@ -16,6 +20,17 @@ struct PatientArray {
 };
 
 PatientArray * initializePatientArray();
+
+void printPatients(PatientArray *pa);
+
+void insertPatient(PatientArray *pa, Patient p);
+
+int findNextPatient(PatientArray *pa);
+
+void removePatient(PatientArray *pa, int index);
+
+Patient popNextPatient(PatientArray *pa);
+
 } //namespace
 
 #endif
