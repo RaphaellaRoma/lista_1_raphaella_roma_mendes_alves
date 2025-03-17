@@ -36,36 +36,66 @@ int main(){
     cout << "exibicao do array de pacientes:"<<endl;
     printPatients(patients_array);
 
+    cout << "------------------------------------------" << endl;
+
     //inserimos um paciente para atingir 75% da capacidade
     insertPatient(patients_array, patient_3);
 
     cout << "mudanca na capacidade do array:" << endl;
     printPatients(patients_array);
 
+    cout << "-------------------------------------------" << endl;
+
     // testaremos a funcao de encontrar proximo paciente
     int nextPatient = findNextPatient(patients_array);
     cout << "indice do proximo paciente: "<< nextPatient << endl;
-    
+  
+    cout << "-------------------------------------------" << endl;
+
     //agora removeremos este paciente com a funcao removePatient
     removePatient(patients_array, nextPatient);
 
     cout << "exibicao apos remover paciente:"<<endl;
     printPatients(patients_array);
 
+    cout << "---------------------------------------------"<< endl;
 
     //verificaremos a funcao de encontrar e remover o proximo paciente simultaneamente
     cout << "busca e remocao do proximo paciente simultaneamente" << endl;
     Patient patient = popNextPatient(patients_array);
-    cout << "Next Patient:" << endl;
+    cout << endl << "Next Patient:" << endl << endl;
     cout << "name: "<< patient.name << endl;
     cout << "severity: "<< patient.severity << endl;
     cout << "arrival time: "<< patient.arrival_time << endl;
 
+
+
     // exibicao do array atual de pacientes
-    cout << "Array atual:" << endl;
+    cout << endl << "Array atual:" << endl << endl;
     printPatients(patients_array);
 
+    cout << "---------------------------------------------" << endl;
 
+    // teste com mais pacientes
+
+
+    cout << "Insercao de mais pacientes" << endl;
+
+    Patient patient_4;
+    strcpy(patient_4.name, "adriana");
+    patient_4.severity = 40;
+    strcpy(patient_4.arrival_time, "17h00");
+
+    Patient patient_5;
+    strcpy(patient_5.name, "Iago");
+    patient_5.severity = 35;
+    strcpy(patient_5.arrival_time, "17h30");
+
+    insertPatient(patients_array, patient_4);
+    insertPatient(patients_array, patient_5);
+    insertPatient(patients_array, patient_1);
+    insertPatient(patients_array, patient_3);
+    printPatients(patients_array);
 
     return 0;
 }
